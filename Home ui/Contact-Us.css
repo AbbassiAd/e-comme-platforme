@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#Contact-Us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Information{
+ 
+background-color: black;
+color: white;
+padding: 22px;
+
+width: 55%;
+}
+
+ .Formulaire {
+    width: 50%;
+    padding: 20px;
+}
+
+.Formulaire {
+    background-color: #c6c6c6;
+}
+
+form {
+    display: grid;
+   
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}

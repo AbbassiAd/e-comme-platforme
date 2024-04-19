@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> 
+</head>
+<body>
+    <div class="container mx-auto">
+        <h2 class="section-title relative text-uppercase mx-4 md:mx-0 mb-4 font-serif text-4xl font-bold tracking-wide">
+            <span class="bg-secondary pr-3 text-black">Contact Us</span>
+          </h2>
+          
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 md:px-0">
+            <div class="bg-white p-6 rounded-lg shadow-md border-black border" >
+                <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                    <div class="mb-4">
+                        <input type="text" class="block w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-primary placeholder-gray-500" id="name" placeholder="Your Name" required="required" />
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" class="block w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-primary placeholder-gray-500" id="email" placeholder="Your Email" required="required" />
+                    </div>
+                    <div class="mb-4">
+                        <input type="text" class="block w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-primary placeholder-gray-500" id="subject" placeholder="Subject" required="required" />
+                    </div>
+                    <div class="mb-4">
+                        <textarea class="block w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-primary placeholder-gray-500" rows="6" id="message" placeholder="Message" required="required"></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline">Send Message</button>
+
+                    </div>
+                </form>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md border-black border">
+                <div class="mb-4">
+                    <img src="https://images.pexels.com/photos/4464815/pexels-photo-4464815.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width="100%" class="h-64 object-cover">
+                </div><br>
+                <div>
+                    <p class="mb-2"><i class="fas fa-map-marker-alt text-primary mr-2"></i>123 Street, New York, USA</p>
+                    <p class="mb-2"><i class="fas fa-envelope text-primary mr-2"></i>info@example.com</p>
+                    <p class="mb-2"><i class="fas fa-phone-alt text-primary mr-2"></i>+012 345 67890</p>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page avec formulaire</title>
+    <style>
+        *{
+            background-color: aqua;
+        }
+        .formulaire {
+            display: none; /* Caché par défaut */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Assure que le formulaire s'affiche au-dessus du contenu existant */
+        }
+
+        .formulaire h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Contenu de la page existante -->
+<h1>Contenu de la page existante</h1>
+<p>Ceci est le contenu de la page existante.</p>
+
+<!-- Bouton pour afficher le formulaire -->
+<button onclick="afficherFormulaire()">Afficher le formulaire</button>
+
+<!-- Formulaire -->
+<div class="formulaire" id="monFormulaire">
+    <h2>Formulaire</h2>
+    <form action="#" method="post">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required><br><br>
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <input type="submit" value="Envoyer">
+    </form>
+</div>
+
+<script>
+    function afficherFormulaire() {
+        var formulaire = document.getElementById("monFormulaire");
+        formulaire.style.display = "block"; // Afficher le formulaire lorsque le bouton est cliqué
+    }
+</script>
+
+</body>
+</html>
