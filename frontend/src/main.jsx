@@ -60,7 +60,7 @@ const router = createBrowserRouter(
         <Route path="add-pub" element={<AddPub />} />
       </Route>
       <Route path="/products/category/:id" element={<ProductByCategory />} />
-      <Route path="/api/ordre" element={<Paiment />} />
+      <Route path="/ordre" element={<Paiment />} />
       <Route path="/cart" element={<Cart />} />
       
       <Route path="" index={true} element={<Home />} />

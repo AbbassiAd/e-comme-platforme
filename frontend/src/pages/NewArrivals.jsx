@@ -1,8 +1,8 @@
-import { useGetAllProductsQuery } from "../redux/api/productApiSlice";
+import { useGetAllProductsQuery, useGetNewProductsQuery } from "../redux/api/productApiSlice";
 import { NewArrival } from "./product/NewArrival";
 
 export default function NewArrivals() {
-    const { data: arrivals } = useGetAllProductsQuery();
+    const { data: arrivals } = useGetNewProductsQuery();
 
     return (
         <section className="relative shop_section layout_padding mt-16 mb-25 p-10 w-3/4 mx-auto">

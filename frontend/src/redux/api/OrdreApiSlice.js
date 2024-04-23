@@ -3,7 +3,7 @@ import { ORDRE_URL } from "../constants.js";
 
 export const ordreApiSlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
-        registerOrdre: builder.mutation({
+        CreateOrdre: builder.mutation({
             query: (data) => ({
                 url: `${ORDRE_URL}`,
                 method: "POST",
@@ -17,4 +17,8 @@ export const ordreApiSlice = apiSlice.injectEndpoints({
             }),
         }),
     }),
-});
+}); 
+export const {
+    useCreateOrdreMutation,
+    useGetOrdreQuery,
+}= ordreApiSlice;

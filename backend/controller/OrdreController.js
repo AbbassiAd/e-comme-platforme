@@ -3,13 +3,26 @@ import Ordre from "../models/OrdreModel.js";
 
 const createOrdre = asyncHandler(async (req, res) => {
     try {
-        const { id_user, payment, status, createdAt, total_price } = req.body;
+        const {
+             id_user,
+            cardInfo: {
+                paimentMethode,
+                Name_on_card,
+                Card_number,
+                Expiry_date,
+                CVV,
+            },
+             total_price } = req.body;
 
         const ordre = await Ordre.create({
             id_user,
-            payment,
-            status,
-            createdAt,
+            cardInfo: {
+                paimentMethode,
+                Name_on_card,
+                Card_number,
+                Expiry_date,
+                CVV,
+            },
             total_price
         });
 

@@ -8,6 +8,7 @@ import { setCart } from "./cartSlice";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 let produitsSelectionners = [];
+let  totalSelection = 0;
 
 
 const Cart = () => {
@@ -44,17 +45,18 @@ const Cart = () => {
 
 
   const calculateSelectedProductsTotal = () => {
-    console.log(selectedProducts)
     let total = 0;
+
     selectedProducts.forEach(productId => {
       const product = cartItems.find(item => item._id === productId);
       if (product) {
         total += product.price * product.quantity;
       }
     });
+
+    totalSelection = Number(total + 29); // Mettez à jour totalSelection avec le total calculé
     return total.toFixed(2);
   };
-
   const checkoutHandler = () => {
   
    produitsSelectionners= selectedProductDetails;
@@ -128,7 +130,7 @@ const Cart = () => {
                   {(Number(calculateSelectedProductsTotal()) + 29).toFixed(2)} $
                 </span>
               </div>
-              <Link to={`/api/ordre`} >
+              <Link to={`/ordre`} >
                 <button
                   onClick={checkoutHandler}
                   className={` w-full h-16 text-white tracking-widest font-medium ${
@@ -151,5 +153,6 @@ const Cart = () => {
 };
 
 export {produitsSelectionners};
+export {totalSelection};
 export default Cart;
  

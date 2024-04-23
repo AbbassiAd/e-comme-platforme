@@ -13,6 +13,7 @@ import uploadRouter from "./routes/uploadRoutes.js";
 import messageRouter from "./routes/messageRoutes.js";
 import pubRouter from "./routes/pubRoutes.js";
 import ordreRouter from "./routes/ordreRoutes.js"
+import ordre_itemsRoutes from "./routes/ordre_itemsRoutes.js"
 dotenv.config();
 const port = process.env.PORT || 3000;
 //connection to database
@@ -32,6 +33,7 @@ app.use("/api/upload", uploadRouter);
 app.use("/api/messages", messageRouter);
 app.use("/api/pubs", pubRouter);
 app.use("/api/ordre", ordreRouter);
+app.use("/api/ordreItems",ordre_itemsRoutes)
 
 
 const __dirname = path.resolve();

@@ -25,11 +25,11 @@ export default function TopProducts(){
     );
 }
   */import React from 'react';
-import { useGetAllProductsQuery } from "../redux/api/productApiSlice";
+import {  useGetTopProductsQuery } from "../redux/api/productApiSlice";
 import TopProduct from "./product/TopProduct";
 
 export default function TopProducts() {
-  const { data: topProducts } = useGetAllProductsQuery();
+  const { data: topProducts } = useGetTopProductsQuery();
 
   return (
     <section id="featured-products" className="text-center py-12 bg-gray-0">

@@ -1,18 +1,52 @@
-import React, { useState } from 'react';
-let paiementInformation= [];
+/* import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux'; // Importez useSelector depuis 'react-redux'
+import { useCreateOrdreMutation } from '../../redux/api/OrdreApiSlice';
+import { totalSelection } from '../../redux/features/cart/Cart';
+import { toast } from 'react-toastify'; // Assurez-vous d'importer toast pour afficher les messages
+
 const PaymentInformation = () => {
   const [selectedPayment, setSelectedPayment] = useState('credit');
-
+  const { userInfo } = useSelector((state) => state.auth);
+  const [idUser] = useState(userInfo?._id);
   const [cardName, setCardName] = useState('');
   const [cardNumber, setCardNumber] = useState('');
   const [cardCvv, setCardCvv] = useState('');
   const [cardExpiration, setCardExpiration] = useState('');
-  
+  const totalPrice = totalSelection ;
+  const [createOrdre] = useCreateOrdreMutation();
   const handlePaymentChange = (paymentType) => {
     setSelectedPayment(paymentType);
   };
 
 
+     const createOrdres = async () => {
+     
+      try {
+        const res = await createOrdre({
+          idUser,
+          cardInfo: {
+            selectedPayment,
+            cardName,
+            cardNumber,
+            cardExpiration,
+            cardCvv,
+          },
+          createdAt, 
+          totalPrice,
+        }).unwrap();
+        if (res.error) {
+          toast.error(res.error);
+        } else {
+          toast.success(`${res.name} created successfully`);
+        }
+      } catch (error) {
+        toast.error(error?.data?.message || error.message);
+      }
+   
+    };
+
+
+  
   return (
     <>
       <h2 className="text-2xl font-semibold mb-8">Payment Information</h2>
@@ -56,3 +90,4 @@ const PaymentInformation = () => {
 
 export default PaymentInformation;
 export { PaymentInformation } ;
+ */
